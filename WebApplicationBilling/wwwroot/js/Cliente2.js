@@ -26,10 +26,10 @@ function initializeDataTable(Clientes) {
         data: Clientes,
         columns: [
             { title: "ID", data: "id", className: "column-id" },
-            { title: "Nombre", data: "firstName", className: "column-name" },
-            { title: "Apellido", data: "lastName", className: "column-name" },
-            { title: "País", data: "country", className: "column-country" },
-            { title: "Teléfono", data: "phone", className: "column-phone" },
+            { title: "Nombre", data: "primerNombre", className: "column-name" },
+            { title: "Apellido", data: "apellido", className: "column-name" },
+            { title: "País", data: "pais", className: "column-pais" },
+            { title: "Teléfono", data: "telefono", className: "column-telefono" },
             {
                 title: "Acciones",
                 data: "id",

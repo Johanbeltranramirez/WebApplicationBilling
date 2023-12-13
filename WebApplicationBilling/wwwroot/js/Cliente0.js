@@ -11,10 +11,10 @@ function loadDataTable() {
         },
         "columns": [
             { "data": "id", "width": "10%" },
-            { "data": "firstName", "width": "20%" },
-            { "data": "lastName", "width": "20%" },
-            { "data": "country", "width": "20%" },
-            { "data": "phone", "width": "10%" },
+            { "data": "primerNombre", "width": "20%" },
+            { "data": "apellido", "width": "20%" },
+            { "data": "pais", "width": "20%" },
+            { "data": "telefono", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {

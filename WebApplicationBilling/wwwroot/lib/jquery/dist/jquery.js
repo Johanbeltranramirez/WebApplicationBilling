@@ -6853,12 +6853,12 @@ jQuery.extend( {
 	// Add in style property hooks for overriding the default
 	// behavior of getting and setting a style property
 	cssHooks: {
-		opacity: {
+		opaciudad: {
 			get: function( elem, computed ) {
 				if ( computed ) {
 
-					// We should always get a number back from opacity
-					var ret = curCSS( elem, "opacity" );
+					// We should always get a number back from opaciudad
+					var ret = curCSS( elem, "opaciudad" );
 					return ret === "" ? "1" : ret;
 				}
 			}
@@ -6869,7 +6869,7 @@ jQuery.extend( {
 	cssNumber: {
 		"animationIterationCount": true,
 		"columnCount": true,
-		"fillOpacity": true,
+		"fillOpaciudad": true,
 		"flexGrow": true,
 		"flexShrink": true,
 		"fontWeight": true,
@@ -6881,7 +6881,7 @@ jQuery.extend( {
 		"gridRowEnd": true,
 		"gridRowStart": true,
 		"lineHeight": true,
-		"opacity": true,
+		"opaciudad": true,
 		"order": true,
 		"orphans": true,
 		"widows": true,
@@ -7306,7 +7306,7 @@ function genFx( type, includeWidth ) {
 	}
 
 	if ( includeWidth ) {
-		attrs.opacity = attrs.width = type;
+		attrs.opaciudad = attrs.width = type;
 	}
 
 	return attrs;
@@ -7747,11 +7747,11 @@ jQuery.speed = function( speed, easing, fn ) {
 jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
 
-		// Show any hidden elements after setting opacity to 0
-		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
+		// Show any hidden elements after setting opaciudad to 0
+		return this.filter( isHiddenWithinTree ).css( "opaciudad", 0 ).show()
 
 			// Animate to the value specified
-			.end().animate( { opacity: to }, speed, easing, callback );
+			.end().animate( { opaciudad: to }, speed, easing, callback );
 	},
 	animate: function( prop, speed, easing, callback ) {
 		var empty = jQuery.isEmptyObject( prop ),
@@ -7882,9 +7882,9 @@ jQuery.each( {
 	slideDown: genFx( "show" ),
 	slideUp: genFx( "hide" ),
 	slideToggle: genFx( "toggle" ),
-	fadeIn: { opacity: "show" },
-	fadeOut: { opacity: "hide" },
-	fadeToggle: { opacity: "toggle" }
+	fadeIn: { opaciudad: "show" },
+	fadeOut: { opaciudad: "hide" },
+	fadeToggle: { opaciudad: "toggle" }
 }, function( name, props ) {
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
 		return this.animate( props, speed, easing, callback );

@@ -9,12 +9,12 @@ namespace WebApplicationBilling.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly IClienteRepository _ClienteRepository;
+        private readonly IClienteRepository _clienteRepository;
 
 
         public ClientesController(IClienteRepository ClienteRepository)
         {
-            this._ClienteRepository = ClienteRepository;
+            this._clienteRepository = ClienteRepository;
         }
 
         [HttpGet]
@@ -30,7 +30,8 @@ namespace WebApplicationBilling.Controllers
             try
             {
                 //Llama al repositorio
-                var data = await _ClienteRepository.GetAllAsync(UrlResources.UrlBase + UrlResources.UrlClientes);
+                var data = await _clienteRepository.GetAllAsync(UrlResources.UrlBase + UrlResources.UrlClientes);
+                
                 return Json(new { data });
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace WebApplicationBilling.Controllers
         }
 
         // GET: ClientesController/Details/5
-        public ActionResult Details(int id) //Pendiente. Reto para el aprendiz
+        public ActionResult Details(int id)
         {
             return View();
         }
@@ -61,7 +62,7 @@ namespace WebApplicationBilling.Controllers
         {
             try
             {
-                await _ClienteRepository.PostAsync(UrlResources.UrlBase + UrlResources.UrlClientes, Cliente);
+                await _clienteRepository.PostAsync(UrlResources.UrlBase + UrlResources.UrlClientes, Cliente);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -76,7 +77,7 @@ namespace WebApplicationBilling.Controllers
 
             var Cliente = new ClienteDTO();
 
-            Cliente = await _ClienteRepository.GetByIdAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id.GetValueOrDefault());
+            Cliente = await _clienteRepository.GetByIdAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id.GetValueOrDefault());
             if (Cliente == null)
             {
                 return NotFound();
@@ -91,7 +92,7 @@ namespace WebApplicationBilling.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _ClienteRepository.UpdateAsync(UrlResources.UrlBase + UrlResources.UrlClientes + Cliente.id, Cliente);
+                await _clienteRepository.UpdateAsync(UrlResources.UrlBase + UrlResources.UrlClientes + Cliente.id, Cliente);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -102,13 +103,13 @@ namespace WebApplicationBilling.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var Cliente = await _ClienteRepository.GetByIdAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id);
+            var Cliente = await _clienteRepository.GetByIdAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id);
             if (Cliente == null)
             {
                 return Json(new { success = false, message = "Cliente no ha sido encontrado." });
             }
 
-            var deleteResult = await _ClienteRepository.DeleteAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id);
+            var deleteResult = await _clienteRepository.DeleteAsync(UrlResources.UrlBase + UrlResources.UrlClientes, id);
             if (deleteResult)
             {
                 return Json(new { success = true, message = "Cliente eliminado correctamente." });

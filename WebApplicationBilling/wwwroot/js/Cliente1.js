@@ -44,10 +44,10 @@ function renderClientes(Clientes) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${Cliente.id}</td>
-            <td>${escapeHtml(Cliente.firstName)}</td>
-            <td>${escapeHtml(Cliente.lastName)}</td>
-            <td>${escapeHtml(Cliente.country)}</td>
-            <td>${escapeHtml(Cliente.phone)}</td>`;
+            <td>${escapeHtml(Cliente.primerNombre)}</td>
+            <td>${escapeHtml(Cliente.apellido)}</td>
+            <td>${escapeHtml(Cliente.pais)}</td>
+            <td>${escapeHtml(Cliente.telefono)}</td>`;
         tbody.appendChild(row);
     });
     table.appendChild(tbody);

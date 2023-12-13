@@ -35,7 +35,7 @@ hr {
   color: inherit;
   background-color: currentColor;
   border: 0;
-  opacity: 0.25;
+  opaciudad: 0.25;
 }
 
 hr:not([size]) {
@@ -306,7 +306,7 @@ select {
   word-wrap: normal;
 }
 select:disabled {
-  opacity: 1;
+  opaciudad: 1;
 }
 
 [list]::-webkit-calendar-picker-indicator {

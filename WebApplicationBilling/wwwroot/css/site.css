@@ -39,11 +39,11 @@ body {
         width: 30%;
     }
 
-    #clientesTable .column-country {
+    #clientesTable .column-pais {
         width: 20%;
     }
 
-    #clientesTable .column-phone {
+    #clientesTable .column-telefono {
         width: 40%;
     }
 
@@ -51,8 +51,8 @@ body {
 @media screen and (max-width: 1024px) {
     #clientesTable .column-id,
     #clientesTable .column-name,
-    #clientesTable .column-country,
-    #clientesTable .column-phone {
+    #clientesTable .column-pais,
+    #clientesTable .column-telefono {
         width: auto; /* O un porcentaje más pequeńo */
     }
 }
