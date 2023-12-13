@@ -4,7 +4,7 @@
     {
 
         public static string UrlBase = "https://localhost:7136/";
-        public static string UrlCustomers = "api/Customers/";
+        public static string UrlClientes = "api/Clientes/";
 
     }
 }

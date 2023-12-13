@@ -1,6 +1,6 @@
 ﻿namespace WebApplicationBilling.Models.DTO
 {
-    public class CustomerDTO
+    public class ClienteDTO
     {
         public int id { get; set; }
         public string FirstName { get; set; }

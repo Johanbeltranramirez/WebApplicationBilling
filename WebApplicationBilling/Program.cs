@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 
 
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 var app = builder.Build();
 

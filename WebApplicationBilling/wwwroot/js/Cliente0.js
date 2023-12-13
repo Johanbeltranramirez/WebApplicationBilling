@@ -3,9 +3,9 @@
 });
 
 function loadDataTable() {
-    dataTable = $('#tblCustomers').DataTable({
+    dataTable = $('#tblClientes').DataTable({
         "ajax": {
-            "url": "/Customers/GetAll", // Asegúrate de que esta ruta sea correcta
+            "url": "/Clientes/GetAll", // Asegúrate de que esta ruta sea correcta
             "type": "GET",
             "datatype": "json"
         },
@@ -19,9 +19,9 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                                <a href="/Customers/Detail/${data}" class="btn btn-primary text-white" style="cursor:pointer;">Ver</a>
-                                <a href="/Customers/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer;">Editar</a>
-                                <a onclick="Delete('/Customers/Delete/${data}')" class="btn btn-danger text-white" style="cursor:pointer;">Borrar</a>
+                                <a href="/Clientes/Detail/${data}" class="btn btn-primary text-white" style="cursor:pointer;">Ver</a>
+                                <a href="/Clientes/Edit/${data}" class="btn btn-success text-white" style="cursor:pointer;">Editar</a>
+                                <a onclick="Delete('/Clientes/Delete/${data}')" class="btn btn-danger text-white" style="cursor:pointer;">Borrar</a>
                             </div>`;
                 }, "width": "20%"
             }

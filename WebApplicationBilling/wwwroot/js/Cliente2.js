@@ -1,9 +1,9 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
-    loadCustomers();
+    loadClientes();
 });
 
-function loadCustomers() {
-    fetch('/Customers/GetAllCustomers') // Asegúrate de reemplazar con la ruta correcta
+function loadClientes() {
+    fetch('/Clientes/GetAllClientes') // Asegúrate de reemplazar con la ruta correcta
         .then(response => response.json())
         .then(data => {
             initializeDataTable(data.data);
@@ -12,18 +12,18 @@ function loadCustomers() {
 }
 
 
-function initializeDataTable(customers) {
-    let table = document.getElementById('customersTable');
+function initializeDataTable(Clientes) {
+    let table = document.getElementById('ClientesTable');
     if (!table) {
         table = document.createElement('table');
-        table.id = 'customersTable';
+        table.id = 'ClientesTable';
         table.className = 'display'; // Clase necesaria para DataTables
-        document.getElementById('customersContainer').appendChild(table);
+        document.getElementById('ClientesContainer').appendChild(table);
     }
 
     $(table).DataTable({
         responsive: true,
-        data: customers,
+        data: Clientes,
         columns: [
             { title: "ID", data: "id", className: "column-id" },
             { title: "Nombre", data: "firstName", className: "column-name" },
@@ -35,9 +35,9 @@ function initializeDataTable(customers) {
                 data: "id",
                 render: function (data) {
                     return `<div class="text-center">
-                                <a href="/Customers/Detail/${data}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                                <a href="/Customers/Edit/${data}" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
-                                <a onclick="Delete('/Customers/Delete/${data}')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="/Clientes/Detail/${data}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                <a href="/Clientes/Edit/${data}" class="btn btn-secondary"><i class="fa fa-edit"></i></a>
+                                <a onclick="Delete('/Clientes/Delete/${data}')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                             </div>`;
                 },
                 className: "column-actions"
@@ -66,8 +66,8 @@ function Delete(url) {
                     if (response && response.success) {
                         toastr.success(response.message || "Registro eliminado con éxito.");
                         // Recargar DataTables
-                        $('#customersTable').DataTable().clear().destroy();
-                        loadCustomers();
+                        $('#ClientesTable').DataTable().clear().destroy();
+                        loadClientes();
                     } else {
                         toastr.error(response.message || "Ocurrió un error desconocido.");
                     }

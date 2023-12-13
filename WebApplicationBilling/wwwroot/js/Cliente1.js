@@ -1,10 +1,10 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     // Llamar a la función para cargar los clientes cuando la página esté completamente cargada
-    loadCustomers();
+    loadClientes();
 });
 
-function loadCustomers() {
-    fetch('/Customers/GetAll') // Asegúrate de reemplazar con la ruta correcta
+function loadClientes() {
+    fetch('/Clientes/GetAll') // Asegúrate de reemplazar con la ruta correcta
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -12,7 +12,7 @@ function loadCustomers() {
             return response.json();
         })
         .then(data => {
-            renderCustomers(data.data);
+            renderClientes(data.data);
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
@@ -20,13 +20,13 @@ function loadCustomers() {
         });
 }
 
-function renderCustomers(customers) {
-    const container = document.getElementById('customersContainer');
+function renderClientes(Clientes) {
+    const container = document.getElementById('ClientesContainer');
     container.innerHTML = ''; // Limpia el contenedor
 
     // Crear la tabla y su cabecera
     const table = document.createElement('table');
-    table.className = 'customer-table'; // Agrega una clase para estilos
+    table.className = 'Cliente-table'; // Agrega una clase para estilos
     const thead = document.createElement('thead');
     thead.innerHTML = `
         <tr>
@@ -40,14 +40,14 @@ function renderCustomers(customers) {
 
     // Crear el cuerpo de la tabla
     const tbody = document.createElement('tbody');
-    customers.forEach(customer => {
+    Clientes.forEach(Cliente => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${customer.id}</td>
-            <td>${escapeHtml(customer.firstName)}</td>
-            <td>${escapeHtml(customer.lastName)}</td>
-            <td>${escapeHtml(customer.country)}</td>
-            <td>${escapeHtml(customer.phone)}</td>`;
+            <td>${Cliente.id}</td>
+            <td>${escapeHtml(Cliente.firstName)}</td>
+            <td>${escapeHtml(Cliente.lastName)}</td>
+            <td>${escapeHtml(Cliente.country)}</td>
+            <td>${escapeHtml(Cliente.phone)}</td>`;
         tbody.appendChild(row);
     });
     table.appendChild(tbody);
