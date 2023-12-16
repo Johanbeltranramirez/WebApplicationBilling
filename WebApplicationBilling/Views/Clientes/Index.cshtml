@@ -1,0 +1,42 @@
+﻿﻿@{
+    ViewData["Title"] = "List of Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Clientes</h2>
+<br />
+<div class="col-6">
+    <a asp-action="Create" class="btn btn-primary text-white">Crear nueva cliente</a>
+</div>
+<br />
+<div id="ClientesContainer">
+    <!-- Los clientes se mostrarán aquí -->
+</div>
+
+
+@section Scripts {
+    <script src="~/js/Cliente2.js"></script>
+}
+
+
+
+@* <style>
+    .cliente-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .cliente-table, .cliente-table th, .cliente-table td {
+            border: 1px solid black;
+        }
+
+            .cliente-table th, .cliente-table td {
+                padding: 8px;
+                text-align: left;
+            }
+
+            .cliente-table th {
+                background-color: #f2f2f2;
+            }
+
+</style> *@

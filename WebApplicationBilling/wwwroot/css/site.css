@@ -1,0 +1,85 @@
+﻿html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+#clientesTable, #productosTable, #proveedoresTable {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    #clientesTable td, #clientesTable th,
+    #productosTable td, #productosTable th,
+    #proveedoresTable td, #proveedoresTable th {
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Ajustes para columnas de Clientes */
+    #clientesTable .column-id,
+    #clientesTable .column-name,
+    #clientesTable .column-pais,
+    #clientesTable .column-telefono {
+        width: auto; /* O un porcentaje más pequeño */
+    }
+
+    /* Ajustes para columnas de Productos */
+    #productosTable .column-id,
+    #productosTable .column-nombreProducto,
+    #productosTable .column-proveedorId,
+    #productosTable .column-unitPrecio,
+    #productosTable .column-paquete,
+    #productosTable .column-esDescontinuado {
+        width: auto; /* O un porcentaje más pequeño */
+    }
+
+    /* Ajustes para columnas de Proveedores */
+    #proveedoresTable .column-id,
+    #proveedoresTable .column-nombreCompania,
+    #proveedoresTable .column-nombreContacto,
+    #proveedoresTable .column-tituloContacto,
+    #proveedoresTable .column-ciudad,
+    #proveedoresTable .column-pais,
+    #proveedoresTable .column-telefono,
+    #proveedoresTable .column-email {
+        width: auto; /* O un porcentaje más pequeño */
+    }
+
+/* Estilos para responsividad */
+@media screen and (max-width: 1024px) {
+    #clientesTable .column-id,
+    #clientesTable .column-name,
+    #clientesTable .column-pais,
+    #clientesTable .column-telefono,
+    #productosTable .column-id,
+    #productosTable .column-nombreProducto,
+    #productosTable .column-proveedorId,
+    #productosTable .column-unitPrecio,
+    #productosTable .column-paquete,
+    #productosTable .column-esDescontinuado,
+    #proveedoresTable .column-id,
+    #proveedoresTable .column-nombreCompania,
+    #proveedoresTable .column-nombreContacto,
+    #proveedoresTable .column-tituloContacto,
+    #proveedoresTable .column-ciudad,
+    #proveedoresTable .column-pais,
+    #proveedoresTable .column-telefono,
+    #proveedoresTable .column-email {
+        width: auto; /* O un porcentaje más pequeño */
+    }
+}

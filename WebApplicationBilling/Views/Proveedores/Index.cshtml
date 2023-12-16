@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "List of Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Proveedores</h2>
+<br />
+<div class="col-6">
+    <a asp-action="Create" class="btn btn-primary text-white">Crear nuevo proveedor</a>
+</div>
+<br />
+<div id="ProveedoresContainer">
+    <!-- Los proveedores se mostrarán aquí -->
+</div>
+
+@section Scripts {
+    <script src="~/js/Proveedor2.js"></script>
+}
+
+@* <style>
+    .proveedor-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .proveedor-table, .proveedor-table th, .proveedor-table td {
+            border: 1px solid black;
+        }
+
+            .proveedor-table th, .proveedor-table td {
+                padding: 8px;
+                text-align: left;
+            }
+
+            .proveedor-table th {
+                background-color: #f2f2f2;
+            }
+
+</style> *@
