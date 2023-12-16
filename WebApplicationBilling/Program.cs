@@ -10,6 +10,8 @@ builder.Services.AddHttpClient();
 
 
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped<IProveedorRepository, ProveedorRepository>();
 
 var app = builder.Build();
 
